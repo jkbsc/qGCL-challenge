@@ -1,7 +1,23 @@
+The challenge program uses a random choice between two options and equal probability each, i.e. 0.5. the code is this, with annotations in braces. I have used (+) to indicate the random choice.
 
+```
+{1/N} # precondition
+var c, v = 0, 1
+while(V<N or c>=N){
+    {Inv x [v < N or C >= N]}
+    [] (v <= N) -> v = 2v
+        c = 2c (+) c = 2c+1
+    [] (v > N) -> v,c=v-N,c-N
+    {Inv}
+}
+{ [c=i] } # Post condition for any 0 <= i < N
+```
+The two guarded commands inside the while loop above govern two different loop constructs.
+
+So, we convert to nested loops, first using repeat for the out loop:
 
 ```bash
-# convert to nested loops, first with repeat:
+# nested loops, with repeat (but broken and incomplete, see the next refinement for better):
 
 { 1/N } # precondition
 var v=1
@@ -17,10 +33,11 @@ repeat {
       : (v > N )  -> v = v - N ; c = c - N
       } until (v>=N and c < N)
 {(c = i) for some 0<=i<N} # Postcondition
+```
+Now modify the initialisation so that the outer loop can be expressed as a while:
 
-
-# convert to nested loops, then with while:
-Inv includes c<v, N=1 or v<2N
+```bash
+# Inv includes c<v, N=1 or v<2N
 
 { 1/N } # precondition
 var v=N+1
@@ -38,15 +55,30 @@ while (c >= N){
        }
    {Inv1}
    }
+```
+The algorithm terminates when N is a power of 2, after one cycle of the outer loop.
 
+From now on, we set N not a power of 2, unless explicitly included.
+
+The state space is a vector of pairs, length l, representing (c, p_c) where p_c means the probability of arriving at c.
+
+We should be able to show that l=v
+```
 state_space=V(:0<=i<l:(i,p_i))
+```
+Want all p_i to be the same.
+```
 A(i,j:0<=i,j<l:p_i=p_j)  # this is part of the invariant
+```
+Should be able to prove that sum(p_i) < 1 (for N not a power of 2).
 
 {(c = i) for some 0<=i<N and A(i,j:0<=i,j<N: P(c=i)=P(c=j))} # Postcondition
 
-# need to show post follows from v>=N and N>c and Inv1 and Inv2
-# want to show that the probablity of termination converges to 1/N with each outer cycle
-# want to show that the state space is recursive or self-similar, i.e. fractal
-# want to show that the probability of getting into the next recursive part is a fixed fraction and therefore that the probability of the recursive parts reduces exponentially with each recursive cycle.
-```
+Need to show that Post follows from v>=N and N>c and Inv1 and Inv2
+
+Want to show that the probablity of termination converges to 1/N with each outer cycle
+
+Want to show that the state space is recursive or self-similar, i.e. fractal
+
+Want to show that the probability of getting into the next recursive part is a fixed fraction and therefore that the probability of the recursive parts reduces exponentially with each recursive cycle.
 
