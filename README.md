@@ -1,4 +1,10 @@
-The challenge program uses a random choice between two options and equal probability each, i.e. 0.5. the code is this, with annotations in braces. I have used (+) to indicate the random choice.
+See the file mciver2025.probabilistic datatypes.challenge program.jpg which is a screen grab from the lecture.
+
+The challenge program (CP) takes an argument N, a natural greater than zero, and returns a natural 0<= c < N, selected uniformaly at random. 
+
+CP uses a random choice between two options and equal probability each, i.e. 0.5. the code is this, with annotations in braces. I have used (+) to indicate the random choice.
+
+CP is efficient in that it gets to a result 0 <= c < N by ???  (assertion in the lecture, not clearly understood by me)
 
 ```
 {1/N} # precondition
