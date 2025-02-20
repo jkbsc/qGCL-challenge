@@ -1,0 +1,29 @@
+#!/bin/bash
+# jkb 19/2/2025
+
+declare -i N=$1
+
+declare -i c=$N
+declare -i v=$(($N + 1))
+
+echo "nested $N"
+
+echo  "v = $v, c = $c"
+
+while [ $c -ge $N ] ; do
+    let "v -= $N"
+    let "c -= $N"
+    echo "inner v = $v, c = $c"
+    while [ $v -lt $N ] ; do
+        let "v+=$v"
+        if [ $( mcpw -n1 --explicit=01 --line=1 ) -eq 1 ]; then
+            echo 1
+            c=$((2*$c + 1))
+        else
+            echo 0
+            c=$((2*$c))
+        fi
+        echo "v = $v, c = $c"
+    done
+done
+

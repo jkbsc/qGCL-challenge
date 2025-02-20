@@ -1,0 +1,49 @@
+#!/bin/bash
+# jkb 19/2/2025
+
+function setup
+{
+    local c=$1
+    local v=$2
+    
+    if [ $c -ge $N ] ; then
+        let "v -= $N"
+        let "c -= $N"
+        echo "expand $c $v  (N = $N)"
+        expand $c $v
+    fi
+#    return $r
+}
+
+function expand
+{
+    local c=$1
+    local v=$2
+    while [ $v -lt $N ] ; do
+        let "v+=$v"
+        if [ $( mcpw -n1 --explicit=01 --line=1 ) -eq 1 ]; then
+            echo 1
+            c=$((2*$c + 1))
+        else
+            echo 0
+            c=$((2*$c))
+        fi
+        echo "v = $v, c = $c"
+    done
+    if [ $c -lt $N ] ; then
+        return $c
+    else
+        setup $c $v
+    fi
+}
+
+declare -i N=$1
+echo "coroutine $N"
+
+declare -i c=$N
+declare -i v=$(($N + 1))
+
+echo setup $c $v
+setup $c $v
+
+echo $?
