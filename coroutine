@@ -10,9 +10,9 @@ function setup
         let "v -= $N"
         let "c -= $N"
         echo "expand $c $v  (N = $N)"
-        expand $c $v
+        c=$(expand $c $v)
     fi
-#    return $r
+    return $c
 }
 
 function expand
