@@ -1,6 +1,6 @@
 See the file mciver2025.probabilistic datatypes.challenge program.jpg which is a screen grab from the lecture.
 
-The challenge program (CP) takes an argument N, a natural greater than zero, and returns a natural 0<= c < N, selected uniformaly at random. 
+The challenge program (CP) takes an argument N, a natural greater than zero, and returns a natural c, 0 <= c < N, selected uniformly at random. 
 
 CP uses a random choice between two options and equal probability each, i.e. 0.5. the code is this, with annotations in braces. I have used (+) to indicate the random choice.
 
@@ -20,10 +20,11 @@ while(V<N or c>=N){
 ```
 The two guarded commands inside the while loop above govern two different loop constructs.
 
-So, we convert to nested loops, first using repeat for the out loop:
+So, we convert to nested loops, first using repeat for the outer loop.
+(But note that the algorithm can also be converted to two coroutines, see the coroutine file.)
 
 ```bash
-# nested loops, with repeat (but broken and incomplete, see the next refinement for better):
+# nested loops, with repeat (but incomplete, see the next refinement for better):
 
 { 1/N } # precondition
 var v=1
@@ -43,7 +44,7 @@ repeat {
 Now modify the initialisation so that the outer loop can be expressed as a while:
 
 ```bash
-# Inv includes c<v, N=1 or v<2N
+# Inv includes c<v and (N=1 or v<2N)
 
 { 1/N } # precondition
 var v=N+1
@@ -76,7 +77,9 @@ Want all p_i to be the same.
 ```
 A(i,j:0<=i,j<l:p_i=p_j)  # this is part of the invariant
 ```
-Should be able to prove that sum(p_i) < 1 (for N not a power of 2).
+Should be able to prove that sum(p_i) = k^m where m is the number of the outer loop, m=0 for the first cycle, m=1 for the second &c and k is a fraction determined by the proportion of states that lead to the case c>=N, i.e. (v-N)/v. We have 0<=c<v, so once we get to v>=N, c falls either in the range [0,N) or in the range [N,v).  For N a power of 2, v=N after the first run of the inner cycle and the range [N,v) is empty. For N not a power of 2, the proportion (v-N)/v of states will lead to a fresh cycle of the outer loop.
+
+Within the inner loop, sum(p_i) = (v-N)/v
 
 {(c = i) for some 0<=i<N and A(i,j:0<=i,j<N: P(c=i)=P(c=j))} # Postcondition
 
