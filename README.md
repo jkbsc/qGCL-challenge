@@ -2,9 +2,9 @@ See the file mciver2025.probabilistic datatypes.challenge program.jpg which is a
 
 The challenge program (CP) takes an argument N, a natural greater than zero, and returns a natural c, 0 <= c < N, selected uniformly at random. 
 
-CP uses a random choice between two options and equal probability each, i.e. 0.5. the code is this, with annotations in braces. I have used (+) to indicate the random choice.
+The CP uses a random choice between two options and equal probability each, i.e. 0.5. the code is this, with annotations in braces. I have used (+) to indicate the random choice.
 
-CP is efficient in that it gets to a result 0 <= c < N by ???  (assertion in the lecture, not clearly understood by me)
+The CP is efficient in that the random choices which are made in order to get to a result 0 <= c < N are all effective, none are wasted.  (assertion in the lecture, not clearly understood by me)
 
 ```
 {1/N} # precondition
