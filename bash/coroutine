@@ -20,13 +20,9 @@ function expand
     local v=$2
     while [ $v -lt $N ] ; do
         let "v+=$v"
-        if [ $( mcpw -n1 --explicit=01 --line=1 ) -eq 1 ]; then
-            echo 1
-            c=$((2*$c + 1))
-        else
-            echo 0
-            c=$((2*$c))
-        fi
+        r=$(($RANDOM % 2 ))
+        echo $r
+        c=$((2*$c + $r))
         echo "v = $v, c = $c"
     done
     if [ $c -lt $N ] ; then

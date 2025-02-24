@@ -1,5 +1,5 @@
-#!/bin/bash
-# jkb 19/2/2025
+#!/usr/bin/python
+# jkb 23/2/2025
 
 function setup
 {

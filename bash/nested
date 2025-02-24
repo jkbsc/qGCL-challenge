@@ -16,14 +16,11 @@ while [ $c -ge $N ] ; do
     echo "inner v = $v, c = $c"
     while [ $v -lt $N ] ; do
         v=$((2*$v))
-        if [ $( mcpw -n1 --explicit=01 --line=1 ) -eq 1 ]; then
-            echo 1
-            c=$((2*$c + 1))
-        else
-            echo 0
-            c=$((2*$c))
-        fi
+        r=$(($RANDOM % 2 ))
+        echo $r
+        c=$((2*$c + $r))
         echo "v = $v, c = $c"
     done
 done
 
+echo $c
