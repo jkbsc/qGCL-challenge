@@ -1,82 +1,46 @@
 #!/usr/bin/python
-# jkb 23/2/2025
+# jkb 24/3/2025
+# this version is specialised to B=2, i.e. the original algorithm
 
 import argparse
 from   fractions import Fraction
-import logging
+#import logger
+from logbook import Logger, StreamHandler  # https://logbook.readthedocs.io/en/stable/index.html
 import random
 import sys
 
-logger = logging.getLogger(__name__)
 
-logging.basicConfig(level=logging.INFO,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    handlers=[
-                        logging.FileHandler("nested.log"),
-                        logging.StreamHandler()
-                    ])
+StreamHandler(sys.stdout).push_application()
+log = Logger('nested.log')
 
 parser = argparse.ArgumentParser("nested")
 parser.add_argument("N", type=int, help="Select i uniformly at random from the range 0 <= i < N.")
-parser.add_argument("B", type=int, nargs='?', default=2, help="The underlying primitive is to select uniformly at random from the range 0<= i < B")
 args = parser.parse_args()
-
-
-def expand (v:int, c:int) :
-    """ Expand the state space from length v until the state space is longer than N """
-    while (v < N) :
-        v=B*v
-        r=random.randrange(B)
-        c=B*c + r
-        print(f"v = {v}, r = {r}, c = {c}")
-    return v,c
-
-
-logging.info(sys.argv)
-
+log.info(sys.argv)
 N=args.N
-B=args.B   # base
+print(f"N={N}")
 
-print(f"N={N}, B={B}")
+c=N
+v=N+1
+p=Fraction(1,1)
+w=Fraction(N+1,1) # this rather strange value is solely to ensure that the calculation of w on the very first loop
+                  # gets the right answer. Probability mass of N+1 is rather strange.
 
-c=0
-v=1
-P=Fraction(1,1)  # P represents the fraction of the statet space which is to be explored
-#{state for N=0}
-while True :
-    print(f"cycle: v = {v}, c = {c}, explore P = {P} of the state space")
-    v,c = expand(v, c)
-    {v>N}
-    {v>c}  # part of the invariant
-    (m,R)=divmod(v,N)
-    print(f"v = {v}, c = {c}, m*N = {m}*{N}={m*N}, R = {R}")
-    if (c>=m*N):
-        P=P*Fraction(R,v)
-        v=v-m*N
-        c=c-m*N
-    else:
-        P=P*(1-Fraction(R,v))
-        c=c%N
-        print(f"done: v = {v}, c = {c} found in P = {P} of the state space")
-        break
+print(f"v = {v}, c = {c}, p = {p}")
+
+while (c >= N) :
+    w=w*Fraction(v-N,v)
+    v=v-N
+    c=c-N
+
+    print(f"inner: v = {v}, c = {c}, p = {p}")
+    while (v < N) :
+        v=2*v
+        r=random.randrange(2)
+        c=2*c + r
+        p=p/2
+        print(f"v = {v}, r = {r}, c = {c}, p = {p}")
+
+w=w*Fraction(N,v)
+print(f"done: v = {v}, c = {c} found in w = {w} of the state space at probability p = {p}")
 print(c)
-                    
-# c=N
-# v=N+1
-# p=1
-
-# print(f"v = {v}, c = {c}, p = {p}")
-
-# while (c >= N) :
-#     v=v-N
-#     c=c-N
-
-#     print(f"inner: v = {v}, c = {c}, p = {p}")
-#     while (v < N) :
-#         v=2*v
-#         r=random.randrange(2)
-#         c=2*c + r
-#         print(f"v = {v}, r = {r}, c = {c}")
-
-#     p=Fraction(v-N,v)
-
