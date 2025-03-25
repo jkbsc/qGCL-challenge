@@ -1,0 +1,97 @@
+#!/usr/bin/python
+# jkb 23/2/2025
+# This version allows an arbitrary base B for the random choice, generalising from B=2 (p=1/2).
+
+import argparse
+from   fractions import Fraction
+#import logger
+from logbook import Logger, StreamHandler  # https://logbook.readthedocs.io/en/stable/index.html
+import random
+import sys
+
+#logger = logging.getLogger(__name__)
+
+# logging.basicConfig(level=logging.INFO,
+#                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+#                     handlers=[
+#                         logging.FileHandler("nested.log"),
+#                         logging.StreamHandler()
+#                     ])
+
+StreamHandler(sys.stdout).push_application()
+log = Logger('nested.log')
+
+parser = argparse.ArgumentParser("nested")
+parser.add_argument("N", type=int, help="Select i uniformly at random from the range 0 <= i < N.")
+parser.add_argument("B", type=int, nargs='?', default=2, help="The underlying primitive is to select uniformly at random from the range 0<= i < B")
+args = parser.parse_args()
+
+
+def expand (v:int, c:int, p:Fraction) :
+    """Expand the state space from length v until the state space is longer than N. Note that the selected point (c) will continue to
+be uniform-at-random from the expanded range.  Maintaining this is part of the invariant.
+    """
+    
+    while (v < N) :
+        v=B*v
+        r=random.randrange(B)
+        c=B*c + r
+        p=p/B
+        print(f"v = {v}, r = {r}, c = {c}, p = {p}")
+    return v,c,p
+
+
+#logging.info(sys.argv)
+log.info(sys.argv)
+
+N=args.N
+B=args.B   # base
+
+#log.info(f"N={N}, B={B}")
+print(f"N={N}, B={B}")
+
+c=0
+v=1
+P=Fraction(1,1)  # P represents the fraction of the state space which is to be explored
+p=Fraction(1,1)  # p represents the probability of the values in the current state space.
+#{state for N=0}
+while True :
+    print(f"cycle: v = {v}, c = {c}, explore P = {P} of the state space")
+    v,c,p = expand(v, c, p)
+    {v>N}  # postcondition of expand
+    {c>v}  # part of the invariant
+    (m,R)=divmod(v,N)
+    print(f"v = {v}, divmod({v},{N})=({m},{R}), m*N = {m}*{N}={m*N}, c = {c}")
+    # c is in the range [0..N..2N.. ..m*N..v-1]
+    if (c>=m*N):
+        P=P*Fraction(R,v)
+        v=v-m*N
+        c=c-m*N
+        {v<N} # precondition for expand
+        {c<v} # part of the invariant
+    else:
+        P=P*(1-Fraction(R,v)) # this is the probability mass of the part of the range with complete N-length sections
+        c=c%N   # amounts to folding the range in units of N. For N=5, B=7, m=2, any of 1,6,11 give the result 1
+        print(f"done: v = {v}, c = {c} found in P = {P} of the state space at probability m*p = {m}*{p} = {m*p}, 1/N=1/{N}")
+        break
+print(c)
+                    
+# c=N
+# v=N+1
+# p=1
+
+# print(f"v = {v}, c = {c}, p = {p}")
+
+# while (c >= N) :
+#     v=v-N
+#     c=c-N
+
+#     print(f"inner: v = {v}, c = {c}, p = {p}")
+#     while (v < N) :
+#         v=2*v
+#         r=random.randrange(2)
+#         c=2*c + r
+#         print(f"v = {v}, r = {r}, c = {c}")
+
+#     p=Fraction(v-N,v)
+

@@ -1,0 +1,654 @@
+N=10, B=3
+expand: v = 1, c = 0, p = 1
+v = 3, r = 2, c = 2
+v = 9, r = 2, c = 8
+v = 27, r = 1, c = 25
+N = 10, v = 27, c = 25, m = 2, R = 7
+cycle: v = 7, c = 5, p = 7/27
+expand: v = 7, c = 5, p = 7/27
+v = 21, r = 2, c = 17
+N = 10, v = 21, c = 17, m = 2, R = 1
+done: v = 21, c = 7, p = 20/81
+7
+2025-02-24 09:02:22,994 - root - INFO - ['./nested', '10', '3']
+N=10, B=3
+expand: v = 1, c = 0, p = 1
+v = 3, r = 2, c = 2
+v = 9, r = 0, c = 6
+v = 27, r = 1, c = 19
+N = 10, v = 27, c = 19, m = 2, R = 7
+done: v = 27, c = 9, p = 20/27
+9
+2025-02-24 09:02:50,573 - root - INFO - ['./nested', '10', '3']
+N=10, B=3
+expand: v = 1, c = 0, p = 1
+v = 3, r = 1, c = 1
+v = 9, r = 2, c = 5
+v = 27, r = 2, c = 17
+N = 10, v = 27, c = 17, m = 2, R = 7
+done: v = 27, c = 7, p = 20/27
+7
+2025-02-24 09:12:13,730 - root - INFO - ['./nested', '10', '3']
+N=10, B=3
+expand: v = 1, c = 0, p = 1
+v = 3, r = 2, c = 2
+v = 9, r = 1, c = 7
+v = 27, r = 1, c = 22
+N = 10, v = 27, c = 22, m = 2, R = 7
+cycle: v = 7, c = 2, p = 7/27
+expand: v = 7, c = 2, p = 7/27
+v = 21, r = 2, c = 8
+N = 10, v = 21, c = 8, m = 2, R = 1
+done: v = 21, c = 8, p = 20/81
+8
+2025-02-24 10:04:31,842 - root - INFO - ['./nested', '10']
+N=10, B=2
+expand: v = 1, c = 0, p = 1
+v = 2, r = 1, c = 1
+v = 4, r = 0, c = 2
+v = 8, r = 0, c = 4
+v = 16, r = 0, c = 8
+N = 10, v = 16, c = 8, m = 1, R = 6
+done: v = 16, c = 8, p = 5/8
+8
+2025-02-24 10:04:56,515 - root - INFO - ['./nested', '10']
+N=10, B=2
+expand: v = 1, c = 0, p = 1
+v = 2, r = 1, c = 1
+v = 4, r = 1, c = 3
+v = 8, r = 0, c = 6
+v = 16, r = 0, c = 12
+N = 10, v = 16, c = 12, m = 1, R = 6
+cycle: v = 6, c = 2, p = 3/8
+expand: v = 6, c = 2, p = 3/8
+v = 12, r = 0, c = 4
+N = 10, v = 12, c = 4, m = 1, R = 2
+done: v = 12, c = 4, p = 5/16
+4
+2025-02-24 10:05:59,965 - root - INFO - ['./nested', '10', '15']
+N=10, B=15
+expand: v = 1, c = 0, p = 1
+v = 15, r = 14, c = 14
+N = 10, v = 15, c = 14, m = 1, R = 5
+cycle: v = 5, c = 4, p = 1/3
+expand: v = 5, c = 4, p = 1/3
+v = 75, r = 8, c = 68
+N = 10, v = 75, c = 68, m = 7, R = 5
+done: v = 75, c = 8, p = 14/45
+8
+2025-02-24 10:51:30,121 - root - INFO - ['./nested', '10']
+N=10, B=2
+cycle: v = 1, c = 0, P = 1
+v = 2, r = 1, c = 1
+v = 4, r = 1, c = 3
+v = 8, r = 0, c = 6
+v = 16, r = 1, c = 13
+v = 16, c = 13, m*N = 1*10=10, R = 6
+cycle: v = 6, c = 3, P = 3/8
+v = 12, r = 1, c = 7
+v = 12, c = 7, m*N = 1*10=10, R = 2
+done: v = 12, c = 7, P = 5/16
+7
+2025-02-24 10:55:16,919 - root - INFO - ['./nested', '10']
+N=10, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0
+v = 4, r = 1, c = 1
+v = 8, r = 0, c = 2
+v = 16, r = 1, c = 5
+v = 16, c = 5, m*N = 1*10=10, R = 6
+done: v = 16, c = 5 found in P = 5/8 of the state space
+5
+2025-02-24 10:55:24,820 - root - INFO - ['./nested', '10']
+N=10, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0
+v = 4, r = 0, c = 0
+v = 8, r = 0, c = 0
+v = 16, r = 1, c = 1
+v = 16, c = 1, m*N = 1*10=10, R = 6
+done: v = 16, c = 1 found in P = 5/8 of the state space
+1
+2025-02-24 10:55:26,996 - root - INFO - ['./nested', '10']
+N=10, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0
+v = 4, r = 1, c = 1
+v = 8, r = 0, c = 2
+v = 16, r = 0, c = 4
+v = 16, c = 4, m*N = 1*10=10, R = 6
+done: v = 16, c = 4 found in P = 5/8 of the state space
+4
+2025-02-24 10:55:28,609 - root - INFO - ['./nested', '10']
+N=10, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 1, c = 1
+v = 4, r = 1, c = 3
+v = 8, r = 1, c = 7
+v = 16, r = 1, c = 15
+v = 16, c = 15, m*N = 1*10=10, R = 6
+cycle: v = 6, c = 5, explore P = 3/8 of the state space
+v = 12, r = 0, c = 10
+v = 12, c = 10, m*N = 1*10=10, R = 2
+cycle: v = 2, c = 0, explore P = 1/16 of the state space
+v = 4, r = 0, c = 0
+v = 8, r = 1, c = 1
+v = 16, r = 0, c = 2
+v = 16, c = 2, m*N = 1*10=10, R = 6
+done: v = 16, c = 2 found in P = 5/128 of the state space
+2
+2025-02-24 10:55:30,083 - root - INFO - ['./nested', '10']
+N=10, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 1, c = 1
+v = 4, r = 1, c = 3
+v = 8, r = 0, c = 6
+v = 16, r = 0, c = 12
+v = 16, c = 12, m*N = 1*10=10, R = 6
+cycle: v = 6, c = 2, explore P = 3/8 of the state space
+v = 12, r = 1, c = 5
+v = 12, c = 5, m*N = 1*10=10, R = 2
+done: v = 12, c = 5 found in P = 5/16 of the state space
+5
+2025-02-24 10:56:39,203 - root - INFO - ['./nested', '10', '3']
+N=10, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 2, c = 2
+v = 9, r = 2, c = 8
+v = 27, r = 2, c = 26
+v = 27, c = 26, m*N = 2*10=20, R = 7
+cycle: v = 7, c = 6, explore P = 7/27 of the state space
+v = 21, r = 1, c = 19
+v = 21, c = 19, m*N = 2*10=20, R = 1
+done: v = 21, c = 9 found in P = 20/81 of the state space
+9
+2025-02-24 11:12:51,961 - root - INFO - ['./nested', '10', '2']
+2025-02-24 11:14:14,402 - root - INFO - ['./nested', '5', '2']
+2025-02-24 11:14:19,119 - root - INFO - ['./nested', '5', '2']
+2025-02-24 11:14:20,503 - root - INFO - ['./nested', '5', '2']
+2025-02-24 11:14:20,503 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 1, c = 1, p = 1/2
+v = 4, r = 1, c = 3, p = 1/4
+v = 8, r = 1, c = 7, p = 1/8
+v = 8, c = 7, m*N = 1*5=5, R = 3
+cycle: v = 3, c = 2, explore P = 3/8 of the state space
+v = 6, r = 1, c = 5, p = 3/16
+v = 6, c = 5, m*N = 1*5=5, R = 1
+cycle: v = 1, c = 0, explore P = 1/16 of the state space
+v = 2, r = 1, c = 1, p = 1/32
+v = 4, r = 0, c = 2, p = 1/64
+v = 8, r = 0, c = 4, p = 1/128
+v = 8, c = 4, m*N = 1*5=5, R = 3
+done: v = 8, c = 4 found in P = 5/128 of the state space at probability p = 1/128
+4
+2025-02-24 11:15:41,861 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 1, c = 1, p = 1/4
+v = 8, r = 0, c = 2, p = 1/8
+v = 8, c = 2, m*N = 1*5=5, R = 3
+done: v = 8, c = 2 found in P = 5/8 of the state space at probability p = 1/8
+2
+2025-02-24 15:43:21,401 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 1, c = 1, p = 1/4
+v = 8, r = 1, c = 3, p = 1/8
+v = 8, c = 3, m*N = 1*5=5, R = 3
+done: v = 8, c = 3 found in P = 5/8 of the state space at probability p = 1/8
+3
+2025-02-24 15:43:24,561 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 0, c = 0, p = 1/4
+v = 8, r = 0, c = 0, p = 1/8
+v = 8, c = 0, m*N = 1*5=5, R = 3
+done: v = 8, c = 0 found in P = 5/8 of the state space at probability p = 1/8
+0
+2025-02-24 15:43:25,611 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 0, c = 0, p = 1/4
+v = 8, r = 1, c = 1, p = 1/8
+v = 8, c = 1, m*N = 1*5=5, R = 3
+done: v = 8, c = 1 found in P = 5/8 of the state space at probability p = 1/8
+1
+2025-02-24 15:43:26,501 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 1, c = 1, p = 1/4
+v = 8, r = 0, c = 2, p = 1/8
+v = 8, c = 2, m*N = 1*5=5, R = 3
+done: v = 8, c = 2 found in P = 5/8 of the state space at probability p = 1/8
+2
+2025-02-24 15:43:27,312 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 1, c = 1, p = 1/2
+v = 4, r = 1, c = 3, p = 1/4
+v = 8, r = 1, c = 7, p = 1/8
+v = 8, c = 7, m*N = 1*5=5, R = 3
+cycle: v = 3, c = 2, explore P = 3/8 of the state space
+v = 6, r = 0, c = 4, p = 1/16
+v = 6, c = 4, m*N = 1*5=5, R = 1
+done: v = 6, c = 4 found in P = 5/16 of the state space at probability p = 1/16
+4
+2025-02-24 15:44:19,038 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 0, c = 0, p = 1/4
+v = 8, r = 0, c = 0, p = 1/8
+v = 8, c = 0, m*N = 1*5=5, R = 3
+done: v = 8, c = 0 found in P = 5/8 of the state space at probability p = 1/8
+0
+2025-02-24 15:44:19,980 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 1, c = 1, p = 1/2
+v = 4, r = 0, c = 2, p = 1/4
+v = 8, r = 0, c = 4, p = 1/8
+v = 8, c = 4, m*N = 1*5=5, R = 3
+done: v = 8, c = 4 found in P = 5/8 of the state space at probability p = 1/8
+4
+2025-02-24 15:44:20,757 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 0, c = 0, p = 1/4
+v = 8, r = 1, c = 1, p = 1/8
+v = 8, c = 1, m*N = 1*5=5, R = 3
+done: v = 8, c = 1 found in P = 5/8 of the state space at probability p = 1/8
+1
+2025-02-24 15:44:21,530 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 1, c = 1, p = 1/2
+v = 4, r = 0, c = 2, p = 1/4
+v = 8, r = 1, c = 5, p = 1/8
+v = 8, c = 5, m*N = 1*5=5, R = 3
+cycle: v = 3, c = 0, explore P = 3/8 of the state space
+v = 6, r = 1, c = 1, p = 1/16
+v = 6, c = 1, m*N = 1*5=5, R = 1
+done: v = 6, c = 1 found in P = 5/16 of the state space at probability p = 1/16
+1
+2025-02-24 15:44:22,277 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 1, c = 1, p = 1/2
+v = 4, r = 1, c = 3, p = 1/4
+v = 8, r = 1, c = 7, p = 1/8
+v = 8, c = 7, m*N = 1*5=5, R = 3
+cycle: v = 3, c = 2, explore P = 3/8 of the state space
+v = 6, r = 1, c = 5, p = 1/16
+v = 6, c = 5, m*N = 1*5=5, R = 1
+cycle: v = 1, c = 0, explore P = 1/16 of the state space
+v = 2, r = 0, c = 0, p = 1/32
+v = 4, r = 0, c = 0, p = 1/64
+v = 8, r = 1, c = 1, p = 1/128
+v = 8, c = 1, m*N = 1*5=5, R = 3
+done: v = 8, c = 1 found in P = 5/128 of the state space at probability p = 1/128
+1
+2025-02-24 15:44:23,062 - root - INFO - ['./nested', '5', '2']
+N=5, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 1, c = 1, p = 1/4
+v = 8, r = 0, c = 2, p = 1/8
+v = 8, c = 2, m*N = 1*5=5, R = 3
+done: v = 8, c = 2 found in P = 5/8 of the state space at probability p = 1/8
+2
+2025-02-24 15:51:51,329 - root - INFO - ['./nested', '5', '4']
+N=5, B=4
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 4, r = 0, c = 0, p = 1/4
+v = 16, r = 2, c = 2, p = 1/16
+v = 16, c = 2, m*N = 3*5=15, R = 1
+done: v = 16, c = 2 found in P = 15/16 of the state space at probability p = 1/16
+2
+2025-02-24 15:52:24,589 - root - INFO - ['./nested', '5', '4']
+N=5, B=4
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 4, r = 3, c = 3, p = 1/4
+v = 16, r = 2, c = 14, p = 1/16
+v = 16, c = 14, m*N = 3*5=15, R = 1
+done: v = 16, c = 4 found in P = 15/16 of the state space at probability p = 1/16
+4
+2025-02-24 15:53:04,998 - root - INFO - ['./nested', '5', '4']
+N=5, B=4
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 4, r = 1, c = 1, p = 1/4
+v = 16, r = 1, c = 5, p = 1/16
+v = 16, c = 5, m*N = 3*5=15, R = 1
+done: v = 16, c = 0 found in P = 15/16 of the state space at probability p = 1/16
+0
+2025-02-24 15:53:05,930 - root - INFO - ['./nested', '5', '4']
+N=5, B=4
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 4, r = 3, c = 3, p = 1/4
+v = 16, r = 3, c = 15, p = 1/16
+v = 16, c = 15, m*N = 3*5=15, R = 1
+cycle: v = 1, c = 0, explore P = 1/16 of the state space
+v = 4, r = 1, c = 1, p = 1/64
+v = 16, r = 3, c = 7, p = 1/256
+v = 16, c = 7, m*N = 3*5=15, R = 1
+done: v = 16, c = 2 found in P = 15/256 of the state space at probability p = 1/256
+2
+2025-02-24 15:57:02,885 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 6, c = 6, p = 1/7
+v = 49, r = 0, c = 42, p = 1/49
+v = 49, c = 42, m*N = 1*25=25, R = 24
+cycle: v = 24, c = 17, explore P = 24/49 of the state space
+v = 168, r = 1, c = 120, p = 1/343
+v = 168, c = 120, m*N = 6*25=150, R = 18
+done: v = 168, c = 20 found in P = 150/343 of the state space at probability p = 1/343
+20
+2025-02-24 15:57:46,631 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 2, c = 2, p = 1/7
+v = 49, r = 2, c = 16, p = 1/49
+v = 49, c = 16, m*N = 1*25=25, R = 24
+done: v = 49, c = 16 found in P = 25/49 of the state space at probability p = 1/49
+16
+2025-02-24 15:57:50,020 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 6, c = 6, p = 1/7
+v = 49, r = 2, c = 44, p = 1/49
+v = 49, c = 44, m*N = 1*25=25, R = 24
+cycle: v = 24, c = 19, explore P = 24/49 of the state space
+v = 168, r = 0, c = 133, p = 1/343
+v = 168, c = 133, m*N = 6*25=150, R = 18
+done: v = 168, c = 8 found in P = 150/343 of the state space at probability p = 1/343
+8
+2025-02-24 15:57:51,645 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 3, c = 3, p = 1/7
+v = 49, r = 2, c = 23, p = 1/49
+v = 49, c = 23, m*N = 1*25=25, R = 24
+done: v = 49, c = 23 found in P = 25/49 of the state space at probability p = 1/49
+23
+2025-02-24 15:57:52,926 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 1, c = 1, p = 1/7
+v = 49, r = 5, c = 12, p = 1/49
+v = 49, c = 12, m*N = 1*25=25, R = 24
+done: v = 49, c = 12 found in P = 25/49 of the state space at probability p = 1/49
+12
+2025-02-24 15:57:53,980 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 1, c = 1, p = 1/7
+v = 49, r = 4, c = 11, p = 1/49
+v = 49, c = 11, m*N = 1*25=25, R = 24
+done: v = 49, c = 11 found in P = 25/49 of the state space at probability p = 1/49
+11
+2025-02-24 15:57:54,942 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 6, c = 6, p = 1/7
+v = 49, r = 1, c = 43, p = 1/49
+v = 49, c = 43, m*N = 1*25=25, R = 24
+cycle: v = 24, c = 18, explore P = 24/49 of the state space
+v = 168, r = 5, c = 131, p = 1/343
+v = 168, c = 131, m*N = 6*25=150, R = 18
+done: v = 168, c = 6 found in P = 150/343 of the state space at probability p = 1/343
+6
+2025-02-24 15:57:55,937 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 0, c = 0, p = 1/7
+v = 49, r = 4, c = 4, p = 1/49
+v = 49, c = 4, m*N = 1*25=25, R = 24
+done: v = 49, c = 4 found in P = 25/49 of the state space at probability p = 1/49
+4
+2025-02-24 15:57:56,871 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 1, c = 1, p = 1/7
+v = 49, r = 1, c = 8, p = 1/49
+v = 49, c = 8, m*N = 1*25=25, R = 24
+done: v = 49, c = 8 found in P = 25/49 of the state space at probability p = 1/49
+8
+2025-02-24 15:57:57,808 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 4, c = 4, p = 1/7
+v = 49, r = 1, c = 29, p = 1/49
+v = 49, c = 29, m*N = 1*25=25, R = 24
+cycle: v = 24, c = 4, explore P = 24/49 of the state space
+v = 168, r = 4, c = 32, p = 1/343
+v = 168, c = 32, m*N = 6*25=150, R = 18
+done: v = 168, c = 7 found in P = 150/343 of the state space at probability p = 1/343
+7
+2025-02-24 15:57:58,727 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 5, c = 5, p = 1/7
+v = 49, r = 6, c = 41, p = 1/49
+v = 49, c = 41, m*N = 1*25=25, R = 24
+cycle: v = 24, c = 16, explore P = 24/49 of the state space
+v = 168, r = 0, c = 112, p = 1/343
+v = 168, c = 112, m*N = 6*25=150, R = 18
+done: v = 168, c = 12 found in P = 150/343 of the state space at probability p = 1/343
+12
+2025-02-24 15:57:59,653 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 0, c = 0, p = 1/7
+v = 49, r = 5, c = 5, p = 1/49
+v = 49, c = 5, m*N = 1*25=25, R = 24
+done: v = 49, c = 5 found in P = 25/49 of the state space at probability p = 1/49
+5
+2025-02-24 15:58:00,847 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 0, c = 0, p = 1/7
+v = 49, r = 1, c = 1, p = 1/49
+v = 49, c = 1, m*N = 1*25=25, R = 24
+done: v = 49, c = 1 found in P = 25/49 of the state space at probability p = 1/49
+1
+2025-02-24 15:58:01,795 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 0, c = 0, p = 1/7
+v = 49, r = 3, c = 3, p = 1/49
+v = 49, c = 3, m*N = 1*25=25, R = 24
+done: v = 49, c = 3 found in P = 25/49 of the state space at probability p = 1/49
+3
+2025-02-24 15:58:02,718 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 0, c = 0, p = 1/7
+v = 49, r = 6, c = 6, p = 1/49
+v = 49, c = 6, m*N = 1*25=25, R = 24
+done: v = 49, c = 6 found in P = 25/49 of the state space at probability p = 1/49
+6
+2025-02-24 15:58:03,613 - root - INFO - ['./nested', '25', '7']
+N=25, B=7
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 7, r = 5, c = 5, p = 1/7
+v = 49, r = 2, c = 37, p = 1/49
+v = 49, c = 37, m*N = 1*25=25, R = 24
+cycle: v = 24, c = 12, explore P = 24/49 of the state space
+v = 168, r = 0, c = 84, p = 1/343
+v = 168, c = 84, m*N = 6*25=150, R = 18
+done: v = 168, c = 9 found in P = 150/343 of the state space at probability p = 1/343
+9
+2025-02-24 15:58:30,823 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 1, c = 1, p = 1/3
+v = 9, r = 0, c = 3, p = 1/9
+v = 27, r = 0, c = 9, p = 1/27
+v = 27, c = 9, m*N = 1*25=25, R = 2
+done: v = 27, c = 9 found in P = 25/27 of the state space at probability p = 1/27
+9
+2025-02-24 15:58:33,335 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 1, c = 1, p = 1/3
+v = 9, r = 2, c = 5, p = 1/9
+v = 27, r = 1, c = 16, p = 1/27
+v = 27, c = 16, m*N = 1*25=25, R = 2
+done: v = 27, c = 16 found in P = 25/27 of the state space at probability p = 1/27
+16
+2025-02-24 15:58:34,264 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 0, c = 0, p = 1/3
+v = 9, r = 2, c = 2, p = 1/9
+v = 27, r = 1, c = 7, p = 1/27
+v = 27, c = 7, m*N = 1*25=25, R = 2
+done: v = 27, c = 7 found in P = 25/27 of the state space at probability p = 1/27
+7
+2025-02-24 15:58:35,088 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 2, c = 2, p = 1/3
+v = 9, r = 0, c = 6, p = 1/9
+v = 27, r = 2, c = 20, p = 1/27
+v = 27, c = 20, m*N = 1*25=25, R = 2
+done: v = 27, c = 20 found in P = 25/27 of the state space at probability p = 1/27
+20
+2025-02-24 15:58:35,938 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 2, c = 2, p = 1/3
+v = 9, r = 2, c = 8, p = 1/9
+v = 27, r = 0, c = 24, p = 1/27
+v = 27, c = 24, m*N = 1*25=25, R = 2
+done: v = 27, c = 24 found in P = 25/27 of the state space at probability p = 1/27
+24
+2025-02-24 15:58:36,769 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 0, c = 0, p = 1/3
+v = 9, r = 2, c = 2, p = 1/9
+v = 27, r = 2, c = 8, p = 1/27
+v = 27, c = 8, m*N = 1*25=25, R = 2
+done: v = 27, c = 8 found in P = 25/27 of the state space at probability p = 1/27
+8
+2025-02-24 15:58:37,596 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 2, c = 2, p = 1/3
+v = 9, r = 1, c = 7, p = 1/9
+v = 27, r = 1, c = 22, p = 1/27
+v = 27, c = 22, m*N = 1*25=25, R = 2
+done: v = 27, c = 22 found in P = 25/27 of the state space at probability p = 1/27
+22
+2025-02-24 15:58:38,435 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 0, c = 0, p = 1/3
+v = 9, r = 2, c = 2, p = 1/9
+v = 27, r = 0, c = 6, p = 1/27
+v = 27, c = 6, m*N = 1*25=25, R = 2
+done: v = 27, c = 6 found in P = 25/27 of the state space at probability p = 1/27
+6
+2025-02-24 15:58:39,274 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 1, c = 1, p = 1/3
+v = 9, r = 0, c = 3, p = 1/9
+v = 27, r = 0, c = 9, p = 1/27
+v = 27, c = 9, m*N = 1*25=25, R = 2
+done: v = 27, c = 9 found in P = 25/27 of the state space at probability p = 1/27
+9
+2025-02-24 15:58:40,048 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 1, c = 1, p = 1/3
+v = 9, r = 1, c = 4, p = 1/9
+v = 27, r = 0, c = 12, p = 1/27
+v = 27, c = 12, m*N = 1*25=25, R = 2
+done: v = 27, c = 12 found in P = 25/27 of the state space at probability p = 1/27
+12
+2025-02-24 15:58:40,881 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 0, c = 0, p = 1/3
+v = 9, r = 1, c = 1, p = 1/9
+v = 27, r = 0, c = 3, p = 1/27
+v = 27, c = 3, m*N = 1*25=25, R = 2
+done: v = 27, c = 3 found in P = 25/27 of the state space at probability p = 1/27
+3
+2025-02-24 15:58:41,736 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 0, c = 0, p = 1/3
+v = 9, r = 2, c = 2, p = 1/9
+v = 27, r = 0, c = 6, p = 1/27
+v = 27, c = 6, m*N = 1*25=25, R = 2
+done: v = 27, c = 6 found in P = 25/27 of the state space at probability p = 1/27
+6
+2025-02-24 15:58:45,872 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 0, c = 0, p = 1/3
+v = 9, r = 1, c = 1, p = 1/9
+v = 27, r = 0, c = 3, p = 1/27
+v = 27, c = 3, m*N = 1*25=25, R = 2
+done: v = 27, c = 3 found in P = 25/27 of the state space at probability p = 1/27
+3
+2025-02-24 15:58:47,692 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 1, c = 1, p = 1/3
+v = 9, r = 2, c = 5, p = 1/9
+v = 27, r = 0, c = 15, p = 1/27
+v = 27, c = 15, m*N = 1*25=25, R = 2
+done: v = 27, c = 15 found in P = 25/27 of the state space at probability p = 1/27
+15
+2025-02-24 15:58:48,590 - root - INFO - ['./nested', '25', '3']
+N=25, B=3
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 3, r = 2, c = 2, p = 1/3
+v = 9, r = 2, c = 8, p = 1/9
+v = 27, r = 2, c = 26, p = 1/27
+v = 27, c = 26, m*N = 1*25=25, R = 2
+cycle: v = 2, c = 1, explore P = 2/27 of the state space
+v = 6, r = 0, c = 3, p = 1/81
+v = 18, r = 1, c = 10, p = 1/243
+v = 54, r = 2, c = 32, p = 1/729
+v = 54, c = 32, m*N = 2*25=50, R = 4
+done: v = 54, c = 7 found in P = 50/729 of the state space at probability p = 1/729
+7
+2025-02-24 16:02:21,634 - root - INFO - ['./nested', '25', '2']
+N=25, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 0, c = 0, p = 1/4
+v = 8, r = 1, c = 1, p = 1/8
+v = 16, r = 0, c = 2, p = 1/16
+v = 32, r = 0, c = 4, p = 1/32
+v = 32, c = 4, m*N = 1*25=25, R = 7
+done: v = 32, c = 4 found in P = 25/32 of the state space at probability p = 1/32
+4
+2025-02-24 16:02:32,148 - root - INFO - ['./nested', '250', '2']
+N=250, B=2
+cycle: v = 1, c = 0, explore P = 1 of the state space
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 0, c = 0, p = 1/4
+v = 8, r = 1, c = 1, p = 1/8
+v = 16, r = 1, c = 3, p = 1/16
+v = 32, r = 1, c = 7, p = 1/32
+v = 64, r = 1, c = 15, p = 1/64
+v = 128, r = 0, c = 30, p = 1/128
+v = 256, r = 1, c = 61, p = 1/256
+v = 256, c = 61, m*N = 1*250=250, R = 6
+done: v = 256, c = 61 found in P = 125/128 of the state space at probability p = 1/256
+61
