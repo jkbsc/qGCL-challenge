@@ -19,7 +19,7 @@ import sys
 #                     ])
 
 StreamHandler(sys.stdout).push_application()
-log = Logger('nested.log')
+log = Logger('nestedB.log')
 
 parser = argparse.ArgumentParser("nested")
 parser.add_argument("N", type=int, help="Select i uniformly at random from the range 0 <= i < N.")
@@ -31,7 +31,6 @@ def expand (v:int, c:int, p:Fraction) :
     """Expand the state space from length v until the state space is longer than N. Note that the selected point (c) will continue to
 be uniform-at-random from the expanded range.  Maintaining this is part of the invariant.
     """
-    
     while (v < N) :
         v=B*v
         r=random.randrange(B)

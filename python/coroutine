@@ -1,48 +1,57 @@
 #!/usr/bin/python
 # jkb 23/2/2025
 
-function setup
-{
-    local c=$1
-    local v=$2
+import argparse
+from   fractions import Fraction
+#import logger
+from logbook import Logger, StreamHandler  # https://logbook.readthedocs.io/en/stable/index.html
+import random
+import sys
+
+
+StreamHandler(sys.stdout).push_application()
+log = Logger('nested.log')
+
+parser = argparse.ArgumentParser("nested")
+parser.add_argument("N", type=int, help="Select i uniformly at random from the range 0 <= i < N.")
+args = parser.parse_args()
+log.info(sys.argv)
+N=args.N
+print(f"N={N}")
+
+
+def expand (v:int, c:int) :
+    """Expand the state space from length v until the state space is longer than N. Note that the selected point (c) will continue to
+be uniform-at-random from the expanded range.  Maintaining this is part of the invariant.
+    """
+    while (v < N) :
+        v = 2*v
+        r=random.randrange(2)
+        c=2*c + r
+        print(f"v = {v}, r = {r}, c = {c}")
+
+    if (c < N) :
+        return v,c
+    else :
+        print(f"setup({v},{c})  (N={N})")
+        return setup(v,c)
+
     
-    if [ $c -ge $N ] ; then
-        let "v -= $N"
-        let "c -= $N"
-        echo "expand $c $v  (N = $N)"
-        expand $c $v
-    fi
-}
+def setup (v:int, c:int) :
+    """setup the next outer cycle.
+    Precondition c >= N
+    """
+    log.debug(f"Precondition c={c} >= N={N}")
+    assert c >= N
+    v = v - N
+    c = c - N
+    print(f"expand({v},{c})  (N={N})")
+    return expand(v,c)
 
-function expand
-{
-    local c=$1
-    local v=$2
-    while [ $v -lt $N ] ; do
-        let "v+=$v"
-        if [ $( mcpw -n1 --explicit=01 --line=1 ) -eq 1 ]; then
-            echo 1
-            c=$((2*$c + 1))
-        else
-            echo 0
-            c=$((2*$c))
-        fi
-        echo "v = $v, c = $c"
-    done
-    if [ $c -lt $N ] ; then
-        return $c
-    else
-        setup $c $v
-    fi
-}
 
-declare -i N=$1
-echo "coroutine $N"
+print(f"coroutine N={N}")
 
-declare -i c=$N
-declare -i v=$(($N + 1))
+print(f"expand(1,0)  (N={N})")
+v,c=expand(1,0)
+print(f"{c}")
 
-echo setup $c $v
-setup $c $v
-
-echo $?

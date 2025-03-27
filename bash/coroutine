@@ -35,10 +35,19 @@ function expand
 declare -i N=$1
 echo "coroutine $N"
 
-declare -i c=$N
-declare -i v=$(($N + 1))
+# if we start with expand, the initialisation makes more sense.
 
-echo setup $c $v
-setup $c $v
+declare -i c=0
+declare -i v=1
+
+echo expand $c $v
+expand $c $v
+
+
+#declare -i c=$N
+#declare -i v=$(($N + 1))
+
+#echo setup $c $v
+#setup $c $v
 
 echo $?

@@ -20,28 +20,24 @@ log.info(sys.argv)
 N=args.N
 print(f"N={N}")
 
-def expand(v:int,c:int, p:Fraction) :
-    print(f"expand: v = {v}, c = {c}, p = {p}")
-    while (v < N) :
-        v=2*v
-        r=random.randrange(2)
-        c=2*c + r
-        p=p/2
-        print(f"v = {v}, r = {r}, c = {c}, p = {p}")
-    return v,c,p
-
 c=0
 v=1
 p=Fraction(1,1)
 w=Fraction(1,1)
 
-v,c,p=expand(v,c,p)
+print(f"v = {v}, c = {c}, p = {p}")
 
-while (c >= N) :
-    w=w*Fraction(v-N,v)
-    v=v-N
-    c=c-N
-    v,c,p=expand(v,c,p)
+while (v < N) :
+    v=2*v
+    r=random.randrange(2)
+    c=2*c + r
+    p=p/2
+    print(f"v = {v}, r = {r}, c = {c}, p = {p}")
+    if (c >= N) :
+        w=w*Fraction(v-N,v)
+        v=v-N
+        c=c-N
+        print(f"reduced: v = {v}, c = {c}, w = {w}")
 
 w=w*Fraction(N,v)
 print(f"done: v = {v}, c = {c} found in w = {w} of the state space at probability p = {p}")

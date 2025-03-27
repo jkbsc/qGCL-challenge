@@ -1,0 +1,46 @@
+[] fladday [0]~/projects/qGCL-challenge $ ./python/nested 5
+[2025-03-25 11:09:35.451301] INFO: nested.log: ['./python/nested', '5']
+N=5
+v = 6, c = 5, p = 1
+inner: v = 1, c = 0, p = 1
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 0, c = 0, p = 1/4
+v = 8, r = 0, c = 0, p = 1/8
+done: v = 8, c = 0 found in w = 5/8 of the state space at probability p = 1/8
+0
+[] fladday [0]~/projects/qGCL-challenge $ ./python/nested 5
+[2025-03-25 11:09:36.211809] INFO: nested.log: ['./python/nested', '5']
+N=5
+v = 6, c = 5, p = 1
+inner: v = 1, c = 0, p = 1
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 1, c = 1, p = 1/4
+v = 8, r = 0, c = 2, p = 1/8
+done: v = 8, c = 2 found in w = 5/8 of the state space at probability p = 1/8
+2
+[] fladday [0]~/projects/qGCL-challenge $ ./python/nested 5
+[2025-03-25 11:09:36.964959] INFO: nested.log: ['./python/nested', '5']
+N=5
+v = 6, c = 5, p = 1
+inner: v = 1, c = 0, p = 1
+v = 2, r = 0, c = 0, p = 1/2
+v = 4, r = 1, c = 1, p = 1/4
+v = 8, r = 0, c = 2, p = 1/8
+done: v = 8, c = 2 found in w = 5/8 of the state space at probability p = 1/8
+2
+[] fladday [0]~/projects/qGCL-challenge $ ./python/nested 5
+[2025-03-25 11:09:37.723280] INFO: nested.log: ['./python/nested', '5']
+N=5
+v = 6, c = 5, p = 1
+inner: v = 1, c = 0, p = 1
+v = 2, r = 1, c = 1, p = 1/2
+v = 4, r = 1, c = 3, p = 1/4
+v = 8, r = 1, c = 7, p = 1/8
+inner: v = 3, c = 2, p = 1/8
+v = 6, r = 1, c = 5, p = 1/16
+inner: v = 1, c = 0, p = 1/16
+v = 2, r = 0, c = 0, p = 1/32
+v = 4, r = 1, c = 1, p = 1/64
+v = 8, r = 0, c = 2, p = 1/128
+done: v = 8, c = 2 found in w = 5/128 of the state space at probability p = 1/128
+2
