@@ -58,7 +58,7 @@ while True :
     print(f"cycle: v = {v}, c = {c}, explore P = {P} of the state space")
     v,c,p = expand(v, c, p)
     {v>N}  # postcondition of expand
-    {c>v}  # part of the invariant
+    {c<v}  # part of the invariant
     (m,R)=divmod(v,N)
     print(f"v = {v}, divmod({v},{N})=({m},{R}), m*N = {m}*{N}={m*N}, c = {c}")
     # c is in the range [0..N..2N.. ..m*N..v-1]
@@ -74,23 +74,3 @@ while True :
         print(f"done: v = {v}, c = {c} found in P = {P} of the state space at probability m*p = {m}*{p} = {m*p}, 1/N=1/{N}")
         break
 print(c)
-                    
-# c=N
-# v=N+1
-# p=1
-
-# print(f"v = {v}, c = {c}, p = {p}")
-
-# while (c >= N) :
-#     v=v-N
-#     c=c-N
-
-#     print(f"inner: v = {v}, c = {c}, p = {p}")
-#     while (v < N) :
-#         v=2*v
-#         r=random.randrange(2)
-#         c=2*c + r
-#         print(f"v = {v}, r = {r}, c = {c}")
-
-#     p=Fraction(v-N,v)
-
