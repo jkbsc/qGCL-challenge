@@ -10,9 +10,9 @@ import sys
 
 
 StreamHandler(sys.stdout).push_application()
-log = Logger('nested.log')
+log = Logger('coroutine.log')
 
-parser = argparse.ArgumentParser("nested")
+parser = argparse.ArgumentParser("coroutine")
 parser.add_argument("N", type=int, help="Select i uniformly at random from the range 0 <= i < N.")
 args = parser.parse_args()
 log.info(sys.argv)

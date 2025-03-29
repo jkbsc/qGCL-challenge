@@ -21,7 +21,7 @@ import sys
 StreamHandler(sys.stdout).push_application()
 log = Logger('nestedB.log')
 
-parser = argparse.ArgumentParser("nested")
+parser = argparse.ArgumentParser("nestedB")
 parser.add_argument("N", type=int, help="Select i uniformly at random from the range 0 <= i < N.")
 parser.add_argument("B", type=int, nargs='?', default=2, help="The underlying primitive is to select uniformly at random from the range 0<= i < B")
 args = parser.parse_args()
@@ -70,7 +70,7 @@ while True :
         {c<v} # part of the invariant
     else:
         P=P*(1-Fraction(R,v)) # this is the probability mass of the part of the range with complete N-length sections
-        c=c%N   # amounts to folding the range in units of N. For N=5, B=7, m=2, any of 1,6,11 give the result 1
+        c=c%N   # amounts to folding the range in units of N. For N=5, B=7, m=2, either of 1,6 give the result 1
         print(f"done: v = {v}, c = {c} found in P = {P} of the state space at probability m*p = {m}*{p} = {m*p}, 1/N=1/{N}")
         break
 print(c)

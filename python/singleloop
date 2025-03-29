@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # jkb 24/3/2025
-# this version is specialised to B=2, i.e. the original algorithm
+# this version is specialised to B=2, i.e. the original algorithm but expressed as a single loop.
+# The outer loop is here converted into a guarded command inside the inner loop.
 
 import argparse
 from   fractions import Fraction
@@ -11,9 +12,9 @@ import sys
 
 
 StreamHandler(sys.stdout).push_application()
-log = Logger('nested.log')
+log = Logger('singleloop.log')
 
-parser = argparse.ArgumentParser("nested")
+parser = argparse.ArgumentParser("singleloop")
 parser.add_argument("N", type=int, help="Select i uniformly at random from the range 0 <= i < N.")
 args = parser.parse_args()
 log.info(sys.argv)
