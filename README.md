@@ -9,13 +9,10 @@ The CP is efficient in that the random choices which are made in order to get to
 The scripts in the bash and python folders are several separate implementations of the algorithm.
 
 The python script 'nestedB' generalises the algorithm so that any integer 2 or greater can be used for the random selection. The
-basic algorithm chooses uniformly at random between two options.  The generalisation chooses uniformaly at random between B
+basic algorithm chooses uniformly at random between two options.  The generalisation chooses uniformly at random between B
 options.
 
 The pdf contains my notes on the algorithm, based on the technologies discussed in Kaminski's 2019 PhD thesis [1]
 
-[1] [Kam19] Benjamin Lucien Kaminski. Erweiterte wp-Kalkule fur Proba-
-bilistische Programme. en. PhD thesis. RWTH Aachen Univer-
-sity, 2019, p. 2019. doi: 10.18154/RWTH-2019-01829. url: https:
-/ / publications . rwth - aachen . de / record / 755408 / files /
-755408.pdf
+[1] [Kam19] Benjamin Lucien Kaminski. Erweiterte wp-Kalkule fur Probabilistische Programme. en. PhD thesis. RWTH Aachen
+University, 2019, p. 2019. doi: 10.18154/RWTH-2019-01829. url: https://publications.rwth-aachen.de/record/755408/files/755408.pdf
