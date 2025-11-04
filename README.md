@@ -10,7 +10,8 @@ The scripts in the bash and python folders are several separate implementations 
 
 The python script 'nestedB' generalises the algorithm so that any integer 2 or greater can be used for the random selection. The
 basic algorithm chooses uniformly at random between two options.  The generalisation chooses uniformly at random between B
-options.
+options. B is for 'base': the basic algorithm is related to the representation of 1/N in base 2; the generalisation is related to
+1/N represented in base B.
 
 The pdf contains my notes on the algorithm, based on the technologies discussed in Kaminski's 2019 PhD thesis [1]
 
