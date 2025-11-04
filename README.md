@@ -6,7 +6,11 @@ The CP uses a random choice between two options and equal probability each, i.e.
 
 The CP is efficient in that the random choices which are made in order to get to a result 0 <= c < N are all effective, none are wasted.
 
-The scripts in the bash and python folders are separate implementations of the algorithm.
+The scripts in the bash and python folders are several separate implementations of the algorithm.
+
+The python script 'nestedB' generalises the algorithm so that any integer 2 or greater can be used for the random selection. The
+basic algorithm chooses uniformly at random between two options.  The generalisation chooses uniformaly at random between B
+options.
 
 The pdf contains my notes on the algorithm, based on the technologies discussed in Kaminski's 2019 PhD thesis [1]
 
