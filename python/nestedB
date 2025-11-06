@@ -57,7 +57,7 @@ p=Fraction(1,1)  # p represents the probability of the values in the current sta
 while True :
     print(f"cycle: v = {v}, c = {c}, explore P = {P} of the state space")
     v,c,p = expand(v, c, p)
-    {v>N}  # postcondition of expand
+    {v>N}  # postcondition of expand # the notation gives a set of bool
     {c<v}  # part of the invariant
     (m,R)=divmod(v,N)
     print(f"v = {v}, divmod({v},{N})=({m},{R}), m*N = {m}*{N}={m*N}, c = {c}")
