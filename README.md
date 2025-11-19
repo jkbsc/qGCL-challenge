@@ -14,11 +14,12 @@ The original algorithm has been converted from a single loop with two guarded co
 
 The state space of the algorithm is a fractal when shown as a graph indicating the transitions between one state and the next.
 
-The state space is closely associated with the expansion of 1/N as a repeating binary decimal and the repeat is directly connected to the fractal state space. Further, the state space divides the probability distribution in an unusual way, not as N equal regions of the range \left[0,1\right] but as N fractal regions each of total size 1/N with each additional subsection corresponding to the increasingly accurate approximation of 1/N by its binary expansion.
+The state space is closely associated with the expansion of 1/N as a repeating binary decimal and the repeat is directly connected to the fractal state space. Further, the state space divides the probability distribution in an unusual way, not as N equal regions of the range $\left[0,1\right]$ but as N fractal regions each of total size 1/N with each additional subsection corresponding to the increasingly accurate approximation of 1/N by its binary expansion.
 
 We have shown an invariant for the two loops and we have shown conditional correctness, i.e. that the algorithm is correct in the case where it terminates.
 
 It does not necessarily terminate when N is not a power of 2. However, in this case, the probability of non-termination decreases exponentially to zero.
+
 The pdf contains my notes on the algorithm, based on the technologies discussed in Kaminski's 2019 PhD thesis [1]
 
 ## Implementation
